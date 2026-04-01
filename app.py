@@ -49,6 +49,26 @@ def contact():
 @app.route("/<path:path>")
 def static_files(path):
     return send_from_directory(".", path)
+@app.route("/messages", methods=["GET"])
+def get_messages():
+    conn = sqlite3.connect("portfolio.db")
+    cursor = conn.cursor()
+    cursor.execute("SELECT id, name, email, message FROM contacts ORDER BY id DESC")
+    rows = cursor.fetchall()
+    conn.close()
+
+    messages = []
+    for row in rows:
+        messages.append({
+            "id": row[0],
+            "name": row[1],
+            "email": row[2],
+            "message": row[3]
+        })
+
+    return jsonify(messages)
+
+
 
 if __name__ == "__main__":
     init_db()
