@@ -100,10 +100,55 @@ button {
   transition: all 0.4s ease;
 }
 
+
 /* Hover subtle Apple effect */
 .hero-memoji img:hover {
   transform: scale(1.08);
 }
+.brand-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* IMPORTANT FIX */
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* FIX TEXT POSITION */
+.brand-text {
+  white-space: nowrap;   /* 🔥 prevents breaking into next line */
+  display: inline-block;
+  font-weight: bold;
+}
+/* LUXURY SERIF LOGO */
+.serif-logo {
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  font-weight: 500;
+
+  font-size: 1.4rem;
+  letter-spacing: -0.02em;
+
+  color: #e6e6e6;
+
+  /* subtle premium glow */
+  text-shadow: 
+    0 0 8px rgba(255,255,255,0.08),
+    0 2px 10px rgba(0,0,0,0.5);
+
+  transition: all 0.3s ease;
+}
+
+/* HOVER (smooth Apple feel) */
+.serif-logo:hover {
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
 
 .site-header {
   position: sticky;
@@ -153,38 +198,6 @@ button {
 .brand:hover {
   transform: scale(1.06) translateY(-2px);
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.5);
-}
-
-
-/* BRAND WRAP */
-.brand-wrap {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-/* TEXT STYLE */
-.brand-text {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 1.3rem;
-  font-weight: 500;
-  letter-spacing: -0.02em;
-  color: #fff;
-
-  /* glass effect */
-  padding: 6px 14px;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.12);
-  backdrop-filter: blur(10px);
-
-  transition: all 0.3s ease;
-}
-
-/* HOVER EFFECT 🔥 */
-.brand-text:hover {
-  transform: translateY(-2px);
-  background: rgba(255,255,255,0.12);
 }
 nav a {
   letter-spacing: 0.6px;
